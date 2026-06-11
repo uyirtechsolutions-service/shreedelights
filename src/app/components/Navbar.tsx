@@ -71,7 +71,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="bg-[#f5f0eb] border-b border-[#e0d6cc] sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex flex-wrap items-center justify-between gap-3">
 
           {/* Logo */}
           <Link to="/" className="flex flex-col leading-none flex-shrink-0">
@@ -97,7 +97,7 @@ export default function Navbar() {
           {/* Icons */}
           <div className="flex items-center gap-3">
             <button onClick={() => setSearchOpen(true)}
-              className="text-[#3d2010] hover:text-[#a0622a] transition-colors"
+              className="text-[#3d2010] hover:text-[#a0622a] transition-colors p-2 rounded-full"
               aria-label="Search">
               <Search className="w-5 h-5" />
             </button>
@@ -109,7 +109,7 @@ export default function Navbar() {
                 </span>
               )}
             </Link>
-            <button className="md:hidden text-[#3d2010] hover:text-[#a0622a] transition-colors p-1"
+            <button className="md:hidden text-[#3d2010] hover:text-[#a0622a] transition-colors p-2 rounded-full"
               onClick={() => setDrawerOpen(true)} aria-label="Open menu">
               <Menu className="w-6 h-6" />
             </button>

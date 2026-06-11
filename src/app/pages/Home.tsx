@@ -3,7 +3,8 @@ import Navbar from '../components/Navbar';
 import SpecialtiesMenu from '../components/SpecialtiesMenu';
 import Footer from '../components/Footer';
 import TruckBorderButton from '../components/TruckBorderButton';
-import homeImg from "../assets/sd-home.png"
+import homeImg from "../assets/sd-home.png";
+import homeVideo from "../assets/sd-cake-video.mp4";
 
 const features = [
   { icon: <UtensilsCrossed className="w-6 h-6" />, title: 'Freshly Baked',       desc: 'Baked fresh every day with premium ingredients.' },
@@ -31,19 +32,23 @@ export default function Home() {
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative w-full overflow-hidden min-h-[480px] md:min-h-[580px]">
-        {/* Background image */}
-        <div className="absolute inset-0 md:left-[35%]">
-          <img
-            src={homeImg}
-            alt="Chocolate drip cake with cupcakes"
+        {/* Background video */}
+        <div className="absolute inset-0 md:left-[19%] overflow-hidden">
+          <video
+            src={homeVideo}
+            poster={homeImg}
+            autoPlay
+            muted
+            loop
+            playsInline
             className="w-full h-full object-cover object-left filter contrast-110 saturate-110 brightness-95"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0eb] via-[#f5f0eb]/60 to-transparent md:via-[#f5f0eb]/35" />
         </div>
 
         {/* Text content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-16 py-12 md:py-16 flex flex-col justify-center min-h-[480px] md:min-h-[580px]">
-          <div className="max-w-sm sm:max-w-md">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-10 sm:py-12 md:py-16 flex flex-col justify-center min-h-[520px] md:min-h-[580px]">
+          <div className="max-w-full sm:max-w-md">
             <p className="text-[#3d1f0a] text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase flex items-center gap-2 mb-4 font-lato">
               Freshly Baked, Made with Love
               <svg width="14" height="14" viewBox="0 0 24 24" fill="#a0622a" strokeWidth="1.5">
@@ -98,7 +103,7 @@ export default function Home() {
 
       {/* ── Features bar ─────────────────────────────────────────────────── */}
       <section className="bg-white py-6 sm:py-8 px-4 sm:px-6 border-t border-b border-[#e8e0d8]">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {features.map((f, i) => (
             <div key={i} className="flex items-start gap-2 sm:gap-3">
               <span className="text-[#a0622a] mt-0.5 flex-shrink-0">{f.icon}</span>

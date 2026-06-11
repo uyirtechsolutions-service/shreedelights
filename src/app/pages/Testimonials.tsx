@@ -61,7 +61,7 @@ export default function Testimonials() {
 
       {/* Stats strip */}
       <section className="bg-white border-b border-[#e8e0d8] py-6 sm:py-8 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-2 sm:gap-6 text-center">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-center">
           {[
             { value: '100+', label: 'Orders' },
             { value: '100%', label: 'Made with Love' },

@@ -223,7 +223,7 @@ export default function OrderCake() {
                 </div>
               ))}
             </div>
-            <div className="mt-4 pt-4 border-t border-[#e8ddd0] flex justify-between items-center">
+            <div className="mt-4 pt-4 border-t border-[#e8ddd0] flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
               <span className="text-[#5a3e2b] font-bold font-lato">Order Total</span>
               <span className="text-lg sm:text-xl font-bold text-[#2c1209] font-lato">₹{totalAmount()}</span>
             </div>
