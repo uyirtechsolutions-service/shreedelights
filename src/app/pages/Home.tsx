@@ -36,9 +36,9 @@ export default function Home() {
           <img
             src={homeImg}
             alt="Chocolate drip cake with cupcakes"
-            className="w-full h-full object-cover object-left"
+            className="w-full h-full object-cover object-left filter contrast-110 saturate-110 brightness-95"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0eb] via-[#f5f0eb]/70 to-transparent md:via-[#f5f0eb]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0eb] via-[#f5f0eb]/60 to-transparent md:via-[#f5f0eb]/35" />
         </div>
 
         {/* Text content */}
