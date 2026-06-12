@@ -1,4 +1,5 @@
 import { Cake, Leaf, Truck, UtensilsCrossed, ShoppingCart } from 'lucide-react';
+import { motion } from 'motion/react';
 import Navbar from '../components/Navbar';
 import SpecialtiesMenu from '../components/SpecialtiesMenu';
 import Footer from '../components/Footer';
@@ -49,20 +50,35 @@ export default function Home() {
         {/* Text content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-10 sm:py-12 md:py-16 flex flex-col justify-center min-h-[520px] md:min-h-[580px]">
           <div className="max-w-full sm:max-w-md">
-            <p className="text-[#3d1f0a] text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase flex items-center gap-2 mb-4 font-lato">
+            {/* Animated tagline */}
+            <motion.p 
+              className="text-[#3d1f0a] text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase flex items-center gap-2 mb-4 font-lato"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
               Freshly Baked, Made with Love
               <svg width="14" height="14" viewBox="0 0 24 24" fill="#a0622a" strokeWidth="1.5">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
               </svg>
-            </p>
+            </motion.p>
 
-            <h1
+            {/* Animated main heading */}
+            <motion.h1
               className="text-[#2c1209] font-bold leading-[1.05] mb-0"
               style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(38px, 7vw, 72px)' }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
               Home-Made
-            </h1>
-            <div className="flex items-baseline gap-2 sm:gap-3 mb-4 flex-wrap">
+            </motion.h1>
+            <motion.div 
+              className="flex items-baseline gap-2 sm:gap-3 mb-4 flex-wrap"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
               <h1
                 className="text-[#2c1209] font-bold leading-[1.05]"
                 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(38px, 7vw, 72px)' }}
@@ -78,25 +94,43 @@ export default function Home() {
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                 </svg>
               </span>
-            </div>
+            </motion.div>
 
-            <p className="text-[#5a3e2b] text-sm leading-relaxed mb-6 sm:mb-9 font-lato max-w-[85vw] sm:max-w-[300px] md:max-w-[340px]">
+            {/* Animated description */}
+            <motion.p 
+              className="text-[#5a3e2b] text-sm leading-relaxed mb-6 sm:mb-9 font-lato max-w-[85vw] sm:max-w-[300px] md:max-w-[340px]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               We create delicious cakes, pastries and baked goods using the finest
               ingredients: because every bite should be memorable and we're FSSAI certified.
-            </p>
+            </motion.p>
 
-            <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
+            {/* Animated buttons */}
+            <motion.div 
+              className="flex items-center gap-3 sm:gap-4 flex-wrap"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
               <button
                 onClick={scrollToMenu}
                 className="cursor-pointer bg-[#2c1209] hover:bg-[#1a0a04] text-white text-[10px] sm:text-[11px] font-bold tracking-[0.18em] uppercase px-6 sm:px-8 py-3 sm:py-3.5 transition font-lato"
               >
                 Shop Now
               </button>
-              <TruckBorderButton  label="Free Delivery" />
-            </div>
-            <p className="mt-2 text-[#5a3e2b] text-[10px] leading-relaxed font-lato max-w-[320px]">
+              <TruckBorderButton onClick={scrollToMenu} label="Free Delivery" />
+            </motion.div>
+            {/* Animated fine print */}
+            <motion.p 
+              className="mt-2 text-[#5a3e2b] text-[10px] leading-relaxed font-lato max-w-[320px]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
               * Free delivery on orders above ₹500 across Tamil Nadu
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>
