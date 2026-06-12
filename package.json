@@ -2,10 +2,14 @@
   "name": "@figma/my-make-file",
   "private": true,
   "version": "0.0.1",
+  "homepage": "https://uyirtechsolutions-service.github.io/shreedelights",
   "type": "module",
   "scripts": {
+    "start": "vite",
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -69,6 +73,8 @@
   "devDependencies": {
     "@tailwindcss/vite": "4.1.12",
     "@vitejs/plugin-react": "4.7.0",
+    "gh-pages": "^6.3.0",
+    "react-scripts": "^5.0.1",
     "tailwindcss": "4.1.12",
     "vite": "6.3.5",
     "vite-plugin-singlefile": "^2.3.3"
