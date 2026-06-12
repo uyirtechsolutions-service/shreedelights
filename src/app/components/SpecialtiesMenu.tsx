@@ -122,12 +122,12 @@ export default function SpecialtiesMenu({ searchQuery, defaultTab }: Props) {
 
         {/* Tabs — hidden in search mode */}
         {!isSearchMode && (
-          <div className="flex overflow-x-auto gap-2 mb-6 sm:mb-10 pb-1 justify-start sm:justify-center">
+          <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-10 justify-center">
             {tabs.map(({ key, label }) => (
               <button
                 key={key}
                 onClick={() => setActiveTab(key)}
-                className={`flex-shrink-0 px-4 sm:px-6 py-2 text-[10px] sm:text-[11px] font-bold tracking-[0.15em] uppercase transition font-lato border ${
+                className={`px-3 sm:px-6 py-2 text-[9px] sm:text-[11px] font-bold tracking-[0.15em] uppercase transition font-lato border whitespace-nowrap ${
                   activeTab === key
                     ? 'bg-[#2c1209] text-white border-[#2c1209]'
                     : 'bg-transparent text-[#2c1209] border-[#2c1209] hover:bg-[#2c1209] hover:text-white'
@@ -140,7 +140,7 @@ export default function SpecialtiesMenu({ searchQuery, defaultTab }: Props) {
         )}
 
         {/* Product grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6">
           {filtered.map((item) => {
             const vIdx = getVariantIndex(item.id);
             const variant = item.variants[vIdx];
@@ -149,30 +149,30 @@ export default function SpecialtiesMenu({ searchQuery, defaultTab }: Props) {
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col"
+                className="bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col h-full"
               >
-                <div className="overflow-hidden">
+                <div className="overflow-hidden w-full">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-32 sm:h-44 object-cover object-center hover:scale-105 transition duration-300"
+                    className="w-full h-24 sm:h-32 md:h-44 object-cover object-center hover:scale-105 transition duration-300"
                   />
                 </div>
-                <div className="p-3 sm:p-4 flex flex-col flex-1">
+                <div className="p-2 sm:p-3 md:p-4 flex flex-col flex-1">
                   <h3
-                    className="text-[#2c1209] text-sm sm:text-base font-bold mb-2 text-center"
+                    className="text-[#2c1209] text-xs sm:text-sm md:text-base font-bold mb-1 sm:mb-2 text-center line-clamp-2"
                    
                   >
                     {item.name}
                   </h3>
 
                   {/* Variant toggle (desktop) and select (mobile) */}
-                  <div className="hidden sm:flex flex-wrap gap-1 sm:gap-1.5 justify-center mb-2 sm:mb-3">
+                  <div className="hidden sm:flex flex-wrap gap-1 justify-center mb-1 sm:mb-2 md:mb-3">
                     {item.variants.map((v, i) => (
                       <button
                         key={i}
                         onClick={() => setSelectedVariants((prev) => ({ ...prev, [item.id]: i }))}
-                        className={`px-2 sm:px-3 py-1.5 text-[9px] sm:text-[10px] font-bold tracking-wide uppercase border transition font-lato rounded-sm min-h-[28px] ${
+                        className={`px-2 sm:px-3 py-1 text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-wide uppercase border transition font-lato rounded-sm min-h-[24px] sm:min-h-[28px] ${
                           vIdx === i
                             ? 'bg-[#2c1209] text-white border-[#2c1209]'
                             : 'bg-white text-[#2c1209] border-[#2c1209]/40 hover:border-[#2c1209]'
@@ -185,12 +185,12 @@ export default function SpecialtiesMenu({ searchQuery, defaultTab }: Props) {
                   </div>
 
                   {/* Mobile: variant select for compact choice like 1/2kg, 1kg, 1pc */}
-                  <div className="block sm:hidden mb-2">
+                  <div className="block sm:hidden mb-1">
                     <label className="sr-only">Choose size</label>
                     <select
                       value={vIdx}
                       onChange={(e) => setSelectedVariants((prev) => ({ ...prev, [item.id]: Number(e.target.value) }))}
-                      className="w-full border border-[#d9cfc4] rounded-md py-2 px-3 text-sm font-lato text-[#2c1209]"
+                      className="w-full border border-[#d9cfc4] rounded-md py-1 px-2 text-xs font-lato text-[#2c1209] bg-white focus:outline-none focus:border-[#a0622a]"
                     >
                       {item.variants.map((v, i) => (
                         <option key={i} value={i}>{v.label}</option>
@@ -199,15 +199,15 @@ export default function SpecialtiesMenu({ searchQuery, defaultTab }: Props) {
                   </div>
 
                   {/* Price */}
-                  <p className="text-[#a0622a] font-bold text-xs sm:text-sm text-center mb-2 sm:mb-3 font-lato">
+                  <p className="text-[#a0622a] font-bold text-[10px] sm:text-xs md:text-sm text-center mb-1 sm:mb-2 md:mb-3 font-lato">
                     ₹{variant.unitPrice}
-                    <span className="text-[#9a8070] font-normal text-[10px] sm:text-xs ml-1">/ {variant.label}</span>
+                    <span className="text-[#9a8070] font-normal text-[8px] sm:text-[9px] md:text-xs ml-1">/ {variant.label}</span>
                   </p>
 
                   {/* Add to cart */}
                   <button
                     onClick={() => handleAdd(item.id)}
-                    className={`mt-auto self-center border px-4 sm:px-5 py-1.5 sm:py-2 text-[10px] sm:text-[11px] font-bold tracking-[0.1em] sm:tracking-[0.15em] uppercase transition font-lato cursor-pointer ${
+                    className={`mt-auto w-full border py-1 sm:py-1.5 md:py-2 text-[9px] sm:text-[10px] md:text-[11px] font-bold tracking-[0.1em] uppercase transition font-lato cursor-pointer ${
                       justAdded === cartId
                         ? 'bg-green-600 border-green-600 text-white'
                         : 'border-[#2c1209] text-[#2c1209] hover:bg-[#2c1209] hover:text-white'
