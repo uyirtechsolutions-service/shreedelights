@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import SpecialtiesMenu from '../components/SpecialtiesMenu';
 import Footer from '../components/Footer';
 import TruckBorderButton from '../components/TruckBorderButton';
-import homeImg from "../assets/sd-home.png";
+// import homeImg from "../assets/sd-home.png";
 import homeVideo from "../assets/sd-cake-video.mp4";
 
 const features = [
@@ -36,7 +36,7 @@ export default function Home() {
         <div className="absolute inset-0 md:left-[19%] overflow-hidden">
           <video
             src={homeVideo}
-            poster={homeImg}
+            // poster={homeImg}
             autoPlay
             muted
             loop
