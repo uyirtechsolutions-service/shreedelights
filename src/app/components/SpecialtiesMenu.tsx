@@ -140,7 +140,7 @@ export default function SpecialtiesMenu({ searchQuery, defaultTab }: Props) {
         )}
 
         {/* Product grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
           {filtered.map((item) => {
             const vIdx = getVariantIndex(item.id);
             const variant = item.variants[vIdx];
@@ -158,16 +158,16 @@ export default function SpecialtiesMenu({ searchQuery, defaultTab }: Props) {
                     className="w-full h-24 sm:h-32 md:h-44 object-cover object-center hover:scale-105 transition duration-300"
                   />
                 </div>
-                <div className="p-2 sm:p-3 md:p-4 flex flex-col flex-1">
+                <div className="p-3 sm:p-4 md:p-5 flex flex-col flex-1">
                   <h3
-                    className="text-[#2c1209] text-xs sm:text-sm md:text-base font-bold mb-1 sm:mb-2 text-center line-clamp-2"
+                    className="text-[#2c1209] text-xs sm:text-sm md:text-base font-bold mb-2 sm:mb-3 text-center line-clamp-2"
                    
                   >
                     {item.name}
                   </h3>
 
                   {/* Variant toggle (desktop) and select (mobile) */}
-                  <div className="hidden sm:flex flex-wrap gap-1 justify-center mb-1 sm:mb-2 md:mb-3">
+                  <div className="hidden sm:flex flex-wrap gap-1 justify-center mb-2 sm:mb-3 md:mb-4">
                     {item.variants.map((v, i) => (
                       <button
                         key={i}
@@ -185,12 +185,12 @@ export default function SpecialtiesMenu({ searchQuery, defaultTab }: Props) {
                   </div>
 
                   {/* Mobile: variant select for compact choice like 1/2kg, 1kg, 1pc */}
-                  <div className="block sm:hidden mb-1">
+                  <div className="block sm:hidden mb-2 sm:mb-3">
                     <label className="sr-only">Choose size</label>
                     <select
                       value={vIdx}
                       onChange={(e) => setSelectedVariants((prev) => ({ ...prev, [item.id]: Number(e.target.value) }))}
-                      className="w-full border border-[#d9cfc4] rounded-md py-1 px-2 text-xs font-lato text-[#2c1209] bg-white focus:outline-none focus:border-[#a0622a]"
+                      className="w-auto mx-auto sm:w-full border border-[#d9cfc4] rounded-md py-1 px-2 text-xs font-lato text-[#2c1209] bg-white focus:outline-none focus:border-[#a0622a] block"
                     >
                       {item.variants.map((v, i) => (
                         <option key={i} value={i}>{v.label}</option>
@@ -199,7 +199,7 @@ export default function SpecialtiesMenu({ searchQuery, defaultTab }: Props) {
                   </div>
 
                   {/* Price */}
-                  <p className="text-[#a0622a] font-bold text-[10px] sm:text-xs md:text-sm text-center mb-1 sm:mb-2 md:mb-3 font-lato">
+                  <p className="text-[#a0622a] font-bold text-[10px] sm:text-xs md:text-sm text-center mb-2 sm:mb-3 md:mb-4 font-lato">
                     ₹{variant.unitPrice}
                     <span className="text-[#9a8070] font-normal text-[8px] sm:text-[9px] md:text-xs ml-1">/ {variant.label}</span>
                   </p>
@@ -207,7 +207,7 @@ export default function SpecialtiesMenu({ searchQuery, defaultTab }: Props) {
                   {/* Add to cart */}
                   <button
                     onClick={() => handleAdd(item.id)}
-                    className={`mt-auto w-full border py-1 sm:py-1.5 md:py-2 text-[9px] sm:text-[10px] md:text-[11px] font-bold tracking-[0.1em] uppercase transition font-lato cursor-pointer ${
+                    className={`mt-auto mx-auto sm:w-full border py-1 sm:py-1.5 md:py-2 px-3 sm:px-0 text-[9px] sm:text-[10px] md:text-[11px] font-bold tracking-[0.1em] uppercase transition font-lato cursor-pointer block mb-1 sm:mb-0 ${
                       justAdded === cartId
                         ? 'bg-green-600 border-green-600 text-white'
                         : 'border-[#2c1209] text-[#2c1209] hover:bg-[#2c1209] hover:text-white'

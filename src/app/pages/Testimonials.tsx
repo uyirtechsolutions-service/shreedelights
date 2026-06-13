@@ -2,33 +2,14 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const testimonials = [
-
   {
-    name: 'Meena Krishnan',
-    role: 'Regular Customer',
-    text: 'Ordered brownies three times now and they never disappoint. Fudgy, rich and perfectly baked — my whole family is obsessed!',
-    initials: 'MK',
-  },
-  {
-    name: 'Divya Ramesh',
-    role: 'First-time Customer',
-    text: 'Tried the cheesecake for the first time and am completely hooked. The crust was buttery, the filling was smooth and the taste was just perfect.',
-    initials: 'DR',
-  },
-  {
-    name: 'Karthik Venkat',
-    role: 'Anniversary Order',
-    text: 'Surprised my wife with a custom anniversary cake and she was in tears — happy tears! The decoration was exactly as requested and the flavour was incredible.',
-    initials: 'KV',
-  },
-  {
-    name: 'Shalini Mohan',
+    name: 'Mohan',
     role: 'Regular Customer',
     text: 'The red velvet cake is absolutely divine. Moist, fluffy and the cream cheese frosting is spot on. Nothing compares to a home-baked cake made with real care.',
     initials: 'SM',
   },
   {
-    name: 'Arjun Das',
+    name: 'kavya',
     role: 'Birthday Order',
     text: 'Placed my order just two days before the birthday and they delivered perfectly on time. The cake looked amazing and tasted even better. Will order again for sure.',
     initials: 'AD',

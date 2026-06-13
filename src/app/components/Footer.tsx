@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import { Mail, Instagram, MessageCircle } from 'lucide-react';
 import logo from '../assets/shree-delights-logo.png';
 
 export default function Footer() {
@@ -13,12 +14,19 @@ export default function Footer() {
         <p className="text-[#c9b08a] text-sm mb-2 font-lato">
           Homemade cakes and treats, baked fresh with love
         </p>
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-1 sm:gap-2 text-[#9a8070] text-xs sm:text-sm font-lato">
-          <span>+91 7010633745</span>
-          <span className="hidden sm:inline">·</span>
-          <span>shreedelights.service@gmail.com</span>
-          <span className="hidden sm:inline">·</span>
-          <span>Instagram: _shree_delights_</span>
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-6 text-[#9a8070] text-xs sm:text-sm font-lato mt-5">
+          <a href="https://wa.me/917010633745" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#d4a843] transition">
+            <MessageCircle className="w-4 h-4" />
+            <span>+91 7010633745</span>
+          </a>
+          <a href="mailto:shreedelights.service@gmail.com" className="flex items-center gap-2 hover:text-[#d4a843] transition">
+            <Mail className="w-4 h-4" />
+            <span>shreedelights.service@gmail.com</span>
+          </a>
+          <a href="https://instagram.com/_shree_delights_" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#d4a843] transition">
+            <Instagram className="w-4 h-4" />
+            <span>_shree_delights_</span>
+          </a>
         </div>
         <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mt-4 text-[#9a8070] text-xs font-lato">
           <Link to="/"             className="hover:text-[#d4a843] transition">Home</Link>

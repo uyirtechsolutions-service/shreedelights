@@ -1,5 +1,6 @@
 import { Cake, Leaf, Truck, UtensilsCrossed, ShoppingCart } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useNavigate } from 'react-router';
 import Navbar from '../components/Navbar';
 import SpecialtiesMenu from '../components/SpecialtiesMenu';
 import Footer from '../components/Footer';
@@ -16,15 +17,15 @@ const features = [
 
 const testimonials = [
   { name: 'Anand Kumar',    role: 'Wedding Customer',   initials: 'AK', text: 'Ordered a custom wedding cake and it completely exceeded our expectations. The attention to detail and the flavour were both outstanding. Highly recommended!' },
-  { name: 'Meena Krishnan', role: 'Regular Customer',   initials: 'MK', text: 'Ordered brownies three times now and they never disappoint. Fudgy, rich and perfectly baked — my whole family is obsessed!' },
-  { name: 'Divya Ramesh',   role: 'First-time Customer',initials: 'DR', text: 'Tried the cheesecake for the first time and am completely hooked. The crust was buttery, the filling was smooth and the taste was just perfect.' },
+  { name: 'Prasanth', role: 'Regular Customer',   initials: 'MK', text: 'Ordered brownies three times now and they never disappoint. Fudgy, rich and perfectly baked — my whole family is obsessed!' },
+  { name: 'Mahesh',   role: 'First-time Customer',initials: 'DR', text: 'Tried the cheesecake for the first time and am completely hooked. The crust was buttery, the filling was smooth and the taste was just perfect.' },
 ];
 
 export default function Home() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  const scrollToMenu = () => {
-    document.getElementById('specialties')?.scrollIntoView({ behavior: 'smooth' });
+  const goToMenu = () => {
+    navigate('/menu');
   };
 
   return (
@@ -115,12 +116,12 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <button
-                onClick={scrollToMenu}
+                onClick={goToMenu}
                 className="cursor-pointer bg-[#2c1209] hover:bg-[#1a0a04] text-white text-[10px] sm:text-[11px] font-bold tracking-[0.18em] uppercase px-6 sm:px-8 py-3 sm:py-3.5 transition font-lato"
               >
                 Shop Now
               </button>
-              <TruckBorderButton onClick={scrollToMenu} label="Free Delivery" />
+              <TruckBorderButton onClick={goToMenu} label="Free Delivery" />
             </motion.div>
             {/* Animated fine print */}
             <motion.p 
@@ -216,7 +217,7 @@ export default function Home() {
             </div>
           </div>
           <button
-            onClick={scrollToMenu}
+            onClick={goToMenu}
             className="border border-white text-white hover:bg-white hover:text-[#2c1209] px-6 sm:px-8 py-3 text-[11px] font-bold tracking-[0.18em] uppercase transition whitespace-nowrap font-lato flex items-center gap-2"
           >
             <ShoppingCart className="w-4 h-4" />
