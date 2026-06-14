@@ -249,7 +249,11 @@ export default function OrderCake() {
               <input
                 type="text"
                 placeholder="Full name"
-                {...register('customerName', { required: 'Name is required' })}
+                {...register('customerName', {
+                  required: 'Name is required',
+                  validate: v => v.trim().length > 0 || 'Name cannot be blank spaces',
+                  minLength: { value: 2, message: 'Name must be at least 2 characters' },
+                })}
                 className="w-full px-4 py-2.5 border border-[#e0d6cc] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a0622a] font-lato text-sm"
               />
               {errors.customerName && <p className="text-red-500 text-xs mt-1 font-lato">{errors.customerName.message}</p>}
@@ -289,7 +293,11 @@ export default function OrderCake() {
               <textarea
                 placeholder="Full address / landmark"
                 rows={2}
-                {...register('deliveryLocation', { required: 'Delivery location is required' })}
+                {...register('deliveryLocation', {
+                  required: 'Delivery location is required',
+                  validate: v => v.trim().length > 0 || 'Address cannot be blank spaces',
+                  minLength: { value: 5, message: 'Please enter a valid address (min 5 characters)' },
+                })}
                 className="w-full px-4 py-2.5 border border-[#e0d6cc] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a0622a] resize-none font-lato text-sm"
               />
               {errors.deliveryLocation && <p className="text-red-500 text-xs mt-1 font-lato">{errors.deliveryLocation.message}</p>}
