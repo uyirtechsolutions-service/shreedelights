@@ -3,6 +3,8 @@ import { Mail, Instagram, MessageCircle } from 'lucide-react';
 import logo from '../assets/shree-delights-logo.png';
 
 export default function Footer() {
+  const scrollToTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+
   return (
     <footer className="bg-[#1a0a04] text-white py-8 sm:py-10 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto text-center">
@@ -29,12 +31,12 @@ export default function Footer() {
           </a>
         </div>
         <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mt-4 text-[#9a8070] text-xs font-lato">
-          <Link to="/"             className="hover:text-[#d4a843] transition">Home</Link>
-          <Link to="/menu"         className="hover:text-[#d4a843] transition">Menu</Link>
-          <Link to="/about"        className="hover:text-[#d4a843] transition">About</Link>
-          <Link to="/testimonials" className="hover:text-[#d4a843] transition">Testimonials</Link>
-          <Link to="/contact"      className="hover:text-[#d4a843] transition">Contact</Link>
-          <Link to="/order"        className="hover:text-[#d4a843] transition">Order</Link>
+          <Link to="/"             onClick={scrollToTop} className="hover:text-[#d4a843] transition">Home</Link>
+          <Link to="/menu"         onClick={scrollToTop} className="hover:text-[#d4a843] transition">Menu</Link>
+          <Link to="/about"        onClick={scrollToTop} className="hover:text-[#d4a843] transition">About</Link>
+          <Link to="/testimonials" onClick={scrollToTop} className="hover:text-[#d4a843] transition">Testimonials</Link>
+          <Link to="/contact"      onClick={scrollToTop} className="hover:text-[#d4a843] transition">Contact</Link>
+          <Link to="/order"        onClick={scrollToTop} className="hover:text-[#d4a843] transition">Order</Link>
         </div>
         <p className="text-[#6b5344] text-xs mt-4 sm:mt-5 font-lato">
           &copy; 2026 Shree Delights. All rights reserved.

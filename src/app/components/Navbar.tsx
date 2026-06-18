@@ -45,7 +45,11 @@ export default function Navbar() {
 
   const handleClick = (action: 'scroll' | 'route', target: string) => {
     setDrawerOpen(false);
-    if (action === 'route') { navigate(target); return; }
+    if (action === 'route') {
+      navigate(target);
+      setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }), 0);
+      return;
+    }
     if (pathname !== '/') {
       navigate('/');
       setTimeout(() => document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' }), 120);

@@ -46,7 +46,25 @@ export default function OrderCake() {
       .map((i) => `${i.name} (${i.variant}) x${i.quantity} @ ₹${i.unitPrice} = ₹${i.unitPrice * i.quantity}`)
       .join(' | ');
 
-    const orderTotal = `Total: ₹${totalAmount()}`;
+    const orderAmount = totalAmount();
+    const orderTotalLabel = `Total: ₹${orderAmount}`;
+
+    const emailPayload = {
+      customer_name:     data.customerName,
+      email:             data.email,
+      phone:             data.phoneNumber,
+      delivery_location: data.deliveryLocation,
+      delivery_date:     data.deliveryDate,
+      delivery_time:     data.deliveryTime,
+      notes:             data.notes || '—',
+      items:             itemsSummary,
+      total:             orderTotalLabel,
+      order_total:       orderTotalLabel,
+      total_label:       orderTotalLabel,
+      total_amount:      orderAmount,
+      orderAmount:       orderAmount,
+      order_time:        new Date().toLocaleString('en-IN'),
+    };
 
     // 1. Send email to bakery owner via EmailJS
     try {
@@ -54,18 +72,7 @@ export default function OrderCake() {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        {
-          customer_name:     data.customerName,
-          email:             data.email,
-          phone:             data.phoneNumber,
-          delivery_location: data.deliveryLocation,
-          delivery_date:     data.deliveryDate,
-          delivery_time:     data.deliveryTime,
-          notes:             data.notes || '—',
-          items:             itemsSummary,
-          total:             orderTotal,
-          order_time:        new Date().toLocaleString('en-IN'),
-        },
+        emailPayload,
         EMAILJS_PUBLIC_KEY,
       );
 
@@ -73,18 +80,7 @@ export default function OrderCake() {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_CONFIRM_TEMPLATE_ID,
-        {
-          customer_name:     data.customerName,
-          email:             data.email,
-          phone:             data.phoneNumber,
-          delivery_location: data.deliveryLocation,
-          delivery_date:     data.deliveryDate,
-          delivery_time:     data.deliveryTime,
-          notes:             data.notes || '—',
-          items:             itemsSummary,
-          total:             orderTotal,
-          order_time:        new Date().toLocaleString('en-IN'),
-        },
+        emailPayload,
         EMAILJS_PUBLIC_KEY,
       );
     } catch (err) {
@@ -108,7 +104,11 @@ export default function OrderCake() {
           deliveryTime:      data.deliveryTime,
           notes:             data.notes || '',
           items:             itemsSummary,
-          total:             orderTotal,
+          total:             orderTotalLabel,
+          order_total:       orderTotalLabel,
+          total_label:       orderTotalLabel,
+          total_amount:      orderAmount,
+          orderAmount:       orderAmount,
         }),
       });
     } catch (err) {
