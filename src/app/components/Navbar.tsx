@@ -105,14 +105,24 @@ export default function Navbar() {
               aria-label="Search">
               <Search className="w-5 h-5" />
             </button>
-            <Link to="/order" className="relative text-[#3d2010] hover:text-[#a0622a] transition-colors">
+            <button
+              type="button"
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+                navigate('/order');
+              }}
+              className="relative text-[#3d2010] hover:text-[#a0622a] transition-colors"
+              aria-label="Open cart"
+            >
               <ShoppingCart className="w-5 h-5" />
               {cartCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-[#2c1209] text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
                   {cartCount}
                 </span>
               )}
-            </Link>
+            </button>
             <button className="md:hidden text-[#3d2010] hover:text-[#a0622a] transition-colors p-2 rounded-full"
               onClick={() => setDrawerOpen(true)} aria-label="Open menu">
               <Menu className="w-6 h-6" />

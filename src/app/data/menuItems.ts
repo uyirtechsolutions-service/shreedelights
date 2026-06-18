@@ -10,7 +10,7 @@ export type MenuItem = {
 };
 
 export const menuItems: MenuItem[] = [
-  // â”€â”€ Brownies â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Brownies ───────────────────────────────────────────────────────────────
   {
     id: 'brownie-fudge',
     name: 'Fudge Brownie',
@@ -31,7 +31,7 @@ export const menuItems: MenuItem[] = [
     id: 'brownie-double-choc',
     name: 'Double Chocolate Brownie',
     category: 'brownies',
-    description: 'Double hit of chocolate â€” cocoa sponge with chocolate chips',
+    description: 'Double hit of chocolate — cocoa sponge with chocolate chips',
     image: new URL('../assets/Shree delights/br-double-chocolate-brownie.png', import.meta.url).href,
     variants: [{ label: '½ kg', unitPrice: 600 }, { label: '1 pc', unitPrice: 60 }],
   },
@@ -63,7 +63,7 @@ export const menuItems: MenuItem[] = [
     id: 'brownie-brookie',
     name: 'Brookie',
     category: 'brownies',
-    description: 'Half brownie, half cookie â€” the best of both worlds in one slice',
+    description: 'Half brownie, half cookie — the best of both worlds in one slice',
     image: new URL('../assets/Shree delights/br-brookie-brownie.png', import.meta.url).href,
     variants: [{ label: '½ kg', unitPrice: 650 }, { label: '1 pc', unitPrice: 65 }],
   },
@@ -92,14 +92,14 @@ export const menuItems: MenuItem[] = [
     variants: [{ label: '½ kg', unitPrice: 650 }, { label: '1 pc', unitPrice: 65 }],
   },
 
-  // â”€â”€ Cakes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Cakes ──────────────────────────────────────────────────────────────────
   {
     id: 'cake-vanilla',
     name: 'Vanilla Cake',
     category: 'cakes',
     description: 'Classic soft vanilla sponge with light vanilla cream frosting',
     image: new URL('../assets/Shree delights/ca-vanilla-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 275 }, { label: '1 kg', unitPrice: 550 }],
+    variants: [{ label: '½ kg', unitPrice: 275 }, { label: '1 kg', unitPrice: 550 }, { label: '1 ½ kg', unitPrice: 825 }],
   },
   {
     id: 'cake-chocolate',
@@ -107,7 +107,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Moist rich chocolate sponge layered with silky chocolate ganache',
     image: new URL('../assets/Shree delights/ca-chocolate-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 300 }, { label: '1 kg', unitPrice: 600 }],
+    variants: [{ label: '½ kg', unitPrice: 300 }, { label: '1 kg', unitPrice: 600 }, { label: '1 ½ kg', unitPrice: 900 }],
   },
   {
     id: 'cake-blackforest',
@@ -115,7 +115,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Chocolate sponge layered with whipped cream and cherries',
     image: new URL('../assets/Shree delights/ca-black-forest-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 375 }, { label: '1 kg', unitPrice: 750 }],
+    variants: [{ label: '½ kg', unitPrice: 375 }, { label: '1 kg', unitPrice: 750 }, { label: '1 ½ kg', unitPrice: 1125 }],
   },
   {
     id: 'cake-whiteforest',
@@ -123,7 +123,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Vanilla sponge with white chocolate, cream and cherries',
     image: new URL('../assets/Shree delights/ca-white-forest-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }],
+    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }, { label: '1 ½ kg', unitPrice: 1200 }],
   },
   {
     id: 'cake-butterscotch',
@@ -131,7 +131,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Soft sponge with butterscotch sauce and crunchy praline crumble',
     image: new URL('../assets/Shree delights/ca-butter-scotch-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }],
+    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }, { label: '1 ½ kg', unitPrice: 1275 }],
   },
   {
     id: 'cake-chocotruffles',
@@ -139,7 +139,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Decadent chocolate cake smothered in truffle ganache all over',
     image: new URL('../assets/Shree delights/ca-choco-truffle-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 500 }, { label: '1 kg', unitPrice: 1000 }],
+    variants: [{ label: '½ kg', unitPrice: 500 }, { label: '1 kg', unitPrice: 1000 }, { label: '1 ½ kg', unitPrice: 1500 }],
   },
   {
     id: 'cake-redvelvet',
@@ -147,7 +147,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Velvety red sponge layered with smooth cream cheese frosting',
     image: new URL('../assets/Shree delights/ca-red-velvet-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }],
+    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }, { label: '1 ½ kg', unitPrice: 1275 }],
   },
   {
     id: 'cake-rosemilk',
@@ -155,7 +155,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Delicate rose-flavoured sponge soaked in rose milk syrup',
     image: new URL('../assets/Shree delights/ca-rosemilk-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }],
+    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }, { label: '1 ½ kg', unitPrice: 1200 }],
   },
   {
     id: 'cake-badammilk',
@@ -163,7 +163,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Almond-infused sponge soaked in rich badam milk with a creamy finish',
     image: new URL('../assets/Shree delights/ca-badam-milk-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }],
+    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }, { label: '1 ½ kg', unitPrice: 1200 }],
   },
   {
     id: 'cake-gulabjamun',
@@ -171,7 +171,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Soft sponge soaked in gulab jamun syrup and topped with mini jamuns',
     image: new URL('../assets/Shree delights/ca-gulab-jamun-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }],
+    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }, { label: '1 ½ kg', unitPrice: 1275 }],
   },
   {
     id: 'cake-rasmalai',
@@ -179,7 +179,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Chiffon sponge infused with rasmalai cream and topped with rasmalai pieces',
     image: new URL('../assets/Shree delights/ca-rasmalai-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 475 }, { label: '1 kg', unitPrice: 950 }],
+    variants: [{ label: '½ kg', unitPrice: 475 }, { label: '1 kg', unitPrice: 950 }, { label: '1 ½ kg', unitPrice: 1425 }],
   },
   {
     id: 'cake-tendercoconut',
@@ -187,7 +187,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Light coconut sponge with fresh tender coconut pieces and coconut cream',
     image: new URL('../assets/Shree delights/ca-tender-coconut-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }],
+    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }, { label: '1 ½ kg', unitPrice: 1275 }],
   },
   {
     id: 'cake-blueberry',
@@ -195,7 +195,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Soft vanilla sponge with blueberry compote and whipped cream frosting',
     image: new URL('../assets/Shree delights/ca-blueberry-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }],
+    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }, { label: '1 ½ kg', unitPrice: 1275 }],
   },
   {
     id: 'cake-blackcurrant',
@@ -203,7 +203,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Vanilla sponge layered with black currant cream and fresh berries',
     image: new URL('../assets/Shree delights/ca-black-currant-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 475 }, { label: '1 kg', unitPrice: 950 }],
+    variants: [{ label: '½ kg', unitPrice: 475 }, { label: '1 kg', unitPrice: 950 }, { label: '1 ½ kg', unitPrice: 1425 }],
   },
   {
     id: 'cake-strawberry',
@@ -211,7 +211,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Fresh strawberry sponge with strawberry cream and berry topping',
     image: new URL('../assets/Shree delights/ca-strawberry-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }],
+    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }, { label: '1 ½ kg', unitPrice: 1200 }],
   },
   {
     id: 'cake-kitkat',
@@ -219,7 +219,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Chocolate cake surrounded by KitKat fingers with a chocolate drip',
     image: new URL('../assets/Shree delights/ca-kitkat-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 500 }, { label: '1 kg', unitPrice: 1000 }],
+    variants: [{ label: '½ kg', unitPrice: 500 }, { label: '1 kg', unitPrice: 1000 }, { label: '1 ½ kg', unitPrice: 1500 }],
   },
   {
     id: 'cake-caramel',
@@ -227,7 +227,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Buttery sponge layered with salted caramel cream and caramel drizzle',
     image: new URL('../assets/Shree delights/ca-caramel-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }],
+    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }, { label: '1 ½ kg', unitPrice: 1200 }],
   },
   {
     id: 'cake-nuttybubble',
@@ -235,15 +235,15 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Chocolate sponge loaded with roasted nuts and honeycomb bubbles',
     image: new URL('../assets/Shree delights/ca-nutty-bubble-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }],
+    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }, { label: '1 ½ kg', unitPrice: 1275 }],
   },
   {
     id: 'cake-vancho',
     name: 'Vancho Cake',
     category: 'cakes',
-    description: 'Half vanilla, half chocolate â€” two flavours in every slice',
+    description: 'Half vanilla, half chocolate — two flavours in every slice',
     image: new URL('../assets/Shree delights/ca-vancho-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }],
+    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }, { label: '1 ½ kg', unitPrice: 1200 }],
   },
   {
     id: 'cake-bourbon',
@@ -251,7 +251,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Rich chocolate sponge with bourbon biscuit cream and cocoa crumble',
     image: new URL('../assets/Shree delights/ca-bourbon-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }],
+    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }, { label: '1 ½ kg', unitPrice: 1200 }],
   },
   {
     id: 'cake-pista',
@@ -259,7 +259,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Light pistachio sponge with pista cream and crushed pistachio topping',
     image: new URL('../assets/Shree delights/ca-pista-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }],
+    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }, { label: '1 ½ kg', unitPrice: 1275 }],
   },
   {
     id: 'cake-snickers',
@@ -267,7 +267,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Chocolate sponge with peanut caramel filling inspired by the classic bar',
     image: new URL('../assets/Shree delights/ca-snickers-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }],
+    variants: [{ label: '½ kg', unitPrice: 425 }, { label: '1 kg', unitPrice: 850 }, { label: '1 ½ kg', unitPrice: 1275 }],
   },
   {
     id: 'cake-oreo',
@@ -275,7 +275,7 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Cookies and cream cake with Oreo-studded cream and a chocolate drip',
     image: new URL('../assets/Shree delights/ca-oreo-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }],
+    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }, { label: '1 ½ kg', unitPrice: 1200 }],
   },
   {
     id: 'cake-mango',
@@ -283,10 +283,10 @@ export const menuItems: MenuItem[] = [
     category: 'cakes',
     description: 'Fresh mango sponge with mango cream frosting and mango pulp filling',
     image: new URL('../assets/Shree delights/ca-mango-cake.png', import.meta.url).href,
-    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }],
+    variants: [{ label: '½ kg', unitPrice: 400 }, { label: '1 kg', unitPrice: 800 }, { label: '1 ½ kg', unitPrice: 1200 }],
   },
 
-  // â”€â”€ Cup Cakes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Cup Cakes ──────────────────────────────────────────────────────────────
   {
     id: 'cupcake-vanilla',
     name: 'Vanilla Cup Cake',
@@ -307,7 +307,7 @@ export const menuItems: MenuItem[] = [
     id: 'cupcake-doublechoc',
     name: 'Double Chocolate Cup Cake',
     category: 'cupcakes',
-    description: 'Double dose of chocolate â€” cocoa sponge with chocolate ganache topping',
+    description: 'Double dose of chocolate — cocoa sponge with chocolate ganache topping',
     image: new URL('../assets/Shree delights/cu-double-chocolate-cupcake.png', import.meta.url).href,
     variants: [{ label: '1 pc', unitPrice: 50 }],
   },
@@ -400,7 +400,7 @@ export const menuItems: MenuItem[] = [
     variants: [{ label: '1 pc', unitPrice: 50 }],
   },
 
-  // â”€â”€ Tea Cakes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Tea Cakes ──────────────────────────────────────────────────────────────
   {
     id: 'teacake-vanilla',
     name: 'Vanilla Tea Cake',
@@ -413,7 +413,7 @@ export const menuItems: MenuItem[] = [
     id: 'teacake-chocolate',
     name: 'Chocolate Tea Cake',
     category: 'teacakes',
-    description: 'Rich chocolate loaf cake with a tender crumb â€” a perfect tea-time treat',
+    description: 'Rich chocolate loaf cake with a tender crumb — a perfect tea-time treat',
     image: new URL('../assets/Shree delights/te-chocolate-teacake.png', import.meta.url).href,
     variants: [{ label: '1 pc', unitPrice: 35 }, { label: 'Box of 7', unitPrice: 210 }],
   },
@@ -453,7 +453,7 @@ export const menuItems: MenuItem[] = [
     id: 'teacake-ragi',
     name: 'Ragi Tea Cake',
     category: 'teacakes',
-    description: 'Nutritious ragi (finger millet) loaf cake â€” healthy and delicious',
+    description: 'Nutritious ragi (finger millet) loaf cake — healthy and delicious',
     image: new URL('../assets/Shree delights/te-ragi-teacake.png', import.meta.url).href,
     variants: [{ label: '1 pc', unitPrice: 35 }, { label: 'Box of 7', unitPrice: 210 }],
   },
@@ -461,13 +461,15 @@ export const menuItems: MenuItem[] = [
     id: 'teacake-wheat',
     name: 'Wheat Tea Cake',
     category: 'teacakes',
-    description: 'Wholesome whole wheat loaf cake â€” light, soft and guilt-free',
+    description: 'Wholesome whole wheat loaf cake — light, soft and guilt-free',
     image: new URL('../assets/Shree delights/te-wheat-teacake.png', import.meta.url).href,
     variants: [{ label: '1 pc', unitPrice: 35 }, { label: 'Box of 7', unitPrice: 210 }],
   },
 
-  // â”€â”€ Others â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Others ─────────────────────────────────────────────────────────────────
  
 ];
+
+
 
 

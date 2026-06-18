@@ -167,35 +167,40 @@ export default function SpecialtiesMenu({ searchQuery, defaultTab }: Props) {
                   </h3>
 
                   {/* Variant toggle (desktop) and select (mobile) */}
-                  <div className="hidden sm:flex flex-wrap gap-1 justify-center mb-2 sm:mb-3 md:mb-4">
-                    {item.variants.map((v, i) => (
-                      <button
-                        key={i}
-                        onClick={() => setSelectedVariants((prev) => ({ ...prev, [item.id]: i }))}
-                        className={`px-2 sm:px-3 py-1 text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-wide uppercase border transition font-lato rounded-sm min-h-[24px] sm:min-h-[28px] ${
-                          vIdx === i
-                            ? 'bg-[#2c1209] text-white border-[#2c1209]'
-                            : 'bg-white text-[#2c1209] border-[#2c1209]/40 hover:border-[#2c1209]'
-                        }`}
-                        aria-pressed={vIdx === i}
-                      >
-                        {v.label}
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Mobile: variant select for compact choice like 1/2kg, 1kg, 1pc */}
-                  <div className="block sm:hidden mb-2 sm:mb-3">
-                    <label className="sr-only">Choose size</label>
-                    <select
-                      value={vIdx}
-                      onChange={(e) => setSelectedVariants((prev) => ({ ...prev, [item.id]: Number(e.target.value) }))}
-                      className="w-auto mx-auto sm:w-full border border-[#d9cfc4] rounded-md py-1 px-2 text-xs font-lato text-[#2c1209] bg-white focus:outline-none focus:border-[#a0622a] block"
-                    >
+                  <div className="mb-2 sm:mb-3">
+                    <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-semibold text-[#a0622a] text-center mb-2 font-lato">
+                      Choose size
+                    </div>
+                    <div className="hidden sm:flex flex-wrap gap-1 justify-center md:mb-4">
                       {item.variants.map((v, i) => (
-                        <option key={i} value={i}>{v.label}</option>
+                        <button
+                          key={i}
+                          onClick={() => setSelectedVariants((prev) => ({ ...prev, [item.id]: i }))}
+                          className={`px-2 sm:px-3 py-1 text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-wide uppercase border transition font-lato rounded-sm min-h-[24px] sm:min-h-[28px] ${
+                            vIdx === i
+                              ? 'bg-[#2c1209] text-white border-[#2c1209]'
+                              : 'bg-white text-[#2c1209] border-[#2c1209]/40 hover:border-[#2c1209]'
+                          }`}
+                          aria-pressed={vIdx === i}
+                        >
+                          {v.label}
+                        </button>
                       ))}
-                    </select>
+                    </div>
+
+                    {/* Mobile: variant select for compact choice like 1/2kg, 1kg, 1pc */}
+                    <div className="block sm:hidden">
+                      <label className="sr-only">Choose size</label>
+                      <select
+                        value={vIdx}
+                        onChange={(e) => setSelectedVariants((prev) => ({ ...prev, [item.id]: Number(e.target.value) }))}
+                        className="w-auto mx-auto sm:w-full border border-[#d9cfc4] rounded-md py-1 px-2 text-xs font-lato text-[#2c1209] bg-white focus:outline-none focus:border-[#a0622a] block"
+                      >
+                        {item.variants.map((v, i) => (
+                          <option key={i} value={i}>{v.label}</option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
 
                   {/* Price */}

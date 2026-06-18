@@ -1,6 +1,12 @@
 import { useLayoutEffect } from 'react';
 import { useLocation } from 'react-router';
 
+function scrollTop() {
+  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
 export default function ScrollToTop() {
   const { pathname, search, hash } = useLocation();
 
@@ -9,10 +15,14 @@ export default function ScrollToTop() {
       window.history.scrollRestoration = 'manual';
     }
 
-    const scrollTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     scrollTop();
-    const id = window.setTimeout(scrollTop, 0);
-    return () => window.clearTimeout(id);
+    const rafId = window.requestAnimationFrame(scrollTop);
+    const timeoutId = window.setTimeout(scrollTop, 50);
+
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      window.clearTimeout(timeoutId);
+    };
   }, [pathname, search, hash]);
 
   return null;
